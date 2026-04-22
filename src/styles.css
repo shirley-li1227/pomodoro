@@ -1,8 +1,8 @@
 :root {
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC",
     "Microsoft YaHei", sans-serif;
-  color: #1f2937;
-  background-color: #f8fafc;
+  color: #5b2d22;
+  background-color: #fff7f2;
 }
 
 * {
@@ -23,21 +23,30 @@ body {
 
 .container {
   width: min(420px, 100%);
-  background: #ffffff;
+  background: #fffdfb;
   border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  border: 1px solid #f8d8cc;
+  box-shadow: 0 12px 28px rgba(225, 94, 58, 0.12);
   padding: 28px;
   text-align: center;
 }
 
-h1 {
+.app-title {
   margin: 0 0 10px;
   font-size: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #bb4a2c;
+}
+
+.app-title-icon {
+  font-size: 28px;
 }
 
 .mode {
-  margin: 0;
-  color: #64748b;
+  margin: 12px 0 0;
+  color: #a2614e;
 }
 
 .time {
@@ -59,9 +68,14 @@ button {
   padding: 10px 16px;
   font-size: 15px;
   font-weight: 600;
-  background: #2563eb;
+  background: #e77b55;
   color: #fff;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #d96843;
 }
 
 button:disabled {
@@ -71,6 +85,70 @@ button:disabled {
 
 .hint {
   margin-top: 18px;
-  color: #475569;
+  color: #9a5f4b;
   font-size: 14px;
+}
+
+.task-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  color: #7a4939;
+  text-align: left;
+}
+
+.task-input {
+  width: 100%;
+  border: 1px solid #efc0af;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #5b2d22;
+  background: #fffdfa;
+}
+
+.task-input:focus {
+  outline: 2px solid #ffd3c6;
+  border-color: #e89679;
+}
+
+.records {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.records h2 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #7a3c2c;
+}
+
+.empty-records {
+  margin: 0;
+  font-size: 14px;
+  color: #b07a67;
+}
+
+.record-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.record-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fff1ea;
+  font-size: 13px;
+}
+
+.record-item time {
+  color: #b27b68;
 }
